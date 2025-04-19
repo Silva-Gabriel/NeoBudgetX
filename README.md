@@ -41,8 +41,8 @@ _(Insira aqui screenshots ou GIFs do projeto em funcionamento, como o login, das
 
 ### Backend
 - C# .NET Core
-- Entity Framework Core
-- SQLite / SQL Server
+- Dapper
+- SQL Server
 - MediatR
 - JWT Authentication
 
@@ -50,7 +50,7 @@ _(Insira aqui screenshots ou GIFs do projeto em funcionamento, como o login, das
 - HTML5
 - CSS3
 - Bootstrap 5
-- JavaScript Vanilla
+- JavaScript
 
 ---
 
