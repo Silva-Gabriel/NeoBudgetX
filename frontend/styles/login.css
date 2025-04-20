@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+        -72.53deg,
+        rgba(74, 113, 223, 1) 0%,
+        rgba(57, 96, 208, 1) 12.869128584861755%,
+        rgba(58, 97, 209, 1) 21.15563005208969%,
+        rgba(40, 79, 192, 1) 39.336177706718445%,
+        rgba(48, 86, 194, 1) 58.68111252784729%,
+        rgba(85, 118, 213, 1) 82.82138705253601%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.90;
+    height: 100vh;
+
+    h1 {
+        color: whitesmoke;
+        text-align: center;
+        letter-spacing: 0.01em;
+        font-weight: 900;
+        font-family: "Poppins-Black", sans-serif;
+        font-size: 96px;
+        text-shadow: 0px 8px 2px #A6A4A4;
+    }
+
+    .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        width: auto;
+        background-color: rgb(192, 210, 216);
+        padding: 50px;
+        border-radius: 40px;
+        box-shadow: 12px 18px 22px 4px rgba(25, 24, 24, 1);
+        flex-flow: column wrap;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        width: 100%;
+        max-width: 650px;
+        /* padding: superior, direita, inferior, esquerda */
+        padding: 80px 60px 60px 60px;
+        margin: 0 auto;
+        height: 500px;
+        border-radius: 40px;
+        box-shadow: 4px 6px 10px 4px rgb(153, 153, 153);
+        opacity: 0.8;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        button {
+            background: linear-gradient(
+                90deg,
+                rgb(56, 173, 101) 10%,
+                rgb(12, 75, 27) 100%
+                
+                
+            );
+            border-radius: 20px;
+            padding: 16px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(6, 53, 29, 0.97);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 32px;
+            font-weight: 900;
+            border: none;
+            margin: 10px 0;
+
+            &:hover {
+                background: linear-gradient(
+                    90deg,
+                    rgb(51, 170, 97) 10%,
+                    rgba(9, 44, 17, 1) 100%
+                ) !important;
+                box-shadow: 0px 4px 10px rgba(6, 53, 29, 0.97);
+                transform: translateY(-1px);
+            }
+            &:active {
+                box-shadow: 0px 6px 12px rgba(6, 53, 29, 0.97);
+                transform: translateY(2px);
+            }
+        }
+
+        .user-container, .password-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            margin: 10px 0;
+            background-color: #555252 !important;
+            border-radius: 20px;
+            border-width: 2px;
+            box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.75);
+            margin: 10px 0;
+            padding: 14px;
+            transition: border 0.1s ease-in-out;
+
+            &:focus-within {
+            border: 2px solid #334db4;
+            }
+
+            input {
+                font-family: "Poppins-Italic", sans-serif;
+                font-size: 26px;
+                font-weight: 800;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                outline: none;
+                background: #555252;
+                color: whitesmoke;
+            }
+
+            .password-toggle-icon {
+                font-size:30px;
+                color: #ffffff;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        }
+
+        p {
+            &.forgot-password {
+                color: #565555;
+                text-align: right;
+                font-family: "Poppins-ExtraBold", sans-serif;
+                font-size: 20px;
+                font-weight: 400;
+                margin: 10px 0;
+                width: 100%;
+                text-shadow: 0px 1px 2px #161616;
+
+                a {
+                    color: #3C91E6;
+                    text-decoration: none;
+                    font-family: "Poppins-ExtraBold", sans-serif;
+                    font-weight: 600;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        color: #2666CF;
+                        text-shadow: 1px 1px 2px #14376e;
+                    }
+                }
+            }
+
+            &.create-account {
+                color: #565555;
+                text-align: center;
+                font-family: "Poppins-ExtraBold", sans-serif;
+                font-size: 26px;
+                font-weight: 600;
+                margin: 10px 0;
+                width: 100%;
+                text-shadow: 0px 1px 2px #2b2b2b;
+
+                a {
+                    color: #3C91E6;
+                    text-decoration: none;
+                    font-family: "Poppins-ExtraBold", sans-serif;
+                    font-size: 26px;
+                    font-weight: 600;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: #2666CF;
+                        text-shadow: 1px 1px 2px #14376e;
+                    }
+                }
+            }
+        }
+
+        .or {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 0 20px;
+            font-size: 20px;
+            font-weight: 900;
+            color: #c7c7c7;
+            gap: 10px;
+            width: 90%;
+            margin: 8px 0;
+
+            hr {
+            border: 2px solid #c7c7c7;
+            border-radius: 20px;
+            width: 100%;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+}
+
+/* Forçar formatação para autofill em navegadores que usam WebKit */
+.user-container input:-webkit-autofill,
+.password-container input:-webkit-autofill {
+    background-color: #555252 !important; /* Cor de fundo desejada */
+    color: whitesmoke !important; /* Cor do texto */
+    -webkit-text-fill-color: whitesmoke !important; /* Garante a cor do texto */
+    -webkit-box-shadow: 0 0 0 1000px #555252 inset !important; /* Remove o fundo padrão */
+    box-shadow: 0 0 0 1000px #555252 inset !important; /* Compatibilidade */
+    transition: background-color 5000s ease-in-out 0s; /* Evita alterações rápidas */
+}
+
+/* Para navegadores que não usam WebKit */
+.user-container input:-moz-autofill,
+.password-container input:-moz-autofill {
+    background-color: #555252 !important;
+    color: whitesmoke !important;
+    box-shadow: 0 0 0 1000px #555252 inset !important; /* Remove o fundo padrão */
+    transition: background-color 5000s ease-in-out 0s; /* Evita alterações rápidas */
+}
