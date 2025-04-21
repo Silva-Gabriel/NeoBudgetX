@@ -35,12 +35,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 80px;
         width: auto;
-        background-color: rgb(192, 210, 216);
-        padding: 50px;
-        border-radius: 40px;
-        box-shadow: 12px 18px 22px 4px rgba(25, 24, 24, 1);
         flex-flow: column wrap;
     }
 
@@ -51,14 +47,14 @@ body {
         justify-content: center;
         background-color: #fff;
         width: 100%;
-        max-width: 650px;
+        max-width: 700px;
         /* padding: superior, direita, inferior, esquerda */
         padding: 80px 60px 60px 60px;
         margin: 0 auto;
         height: 500px;
         border-radius: 40px;
-        box-shadow: 4px 6px 10px 4px rgb(153, 153, 153);
-        opacity: 0.8;
+        box-shadow: 12px 18px 22px 4px rgba(25, 24, 24, 1);
+        opacity: 0.7;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
 
