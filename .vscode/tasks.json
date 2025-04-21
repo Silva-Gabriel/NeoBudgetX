@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/backend/auth/api/auth.csproj" // Substitua pelo caminho correto do seu arquivo .csproj
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

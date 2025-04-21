@@ -1,0 +1,10 @@
+{
+    "data": {
+        "isValid": true
+    },
+    "response": {
+        "error": false,
+        "message": "Data retrieved successfully",
+        "status": 200
+    }
+}

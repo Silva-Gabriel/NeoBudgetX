@@ -22,13 +22,13 @@
             <img src="../imgs/moedas-icon.png" /> NeoBudgetX
             <img src="../imgs/money-icon.png" />
           </h1>
-          <form>
+          <form onsubmit="Login(event)">
             <div class="user-container">
-              <input type="text" placeholder="Usuário" />
+              <input id="user" type="text" placeholder="Usuário" />
               <img src="../imgs/user-icon.png" width="40" />
             </div>
             <div class="password-container">
-              <input type="text" id="password" placeholder="Senha" />
+              <input id="password" type="text" id="password" placeholder="Senha" />
               <i
                 class="password-toggle-icon fas fa-eye-slash"
                 onclick="showPassword()"
