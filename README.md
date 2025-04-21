@@ -33,7 +33,15 @@ NeoBudgetX não é apenas um app de controle financeiro – é uma ferramenta pa
 
 ## 📷 Preview
 
-_(Insira aqui screenshots ou GIFs do projeto em funcionamento, como o login, dashboard e listagem de gastos)_
+### Tela de Login:
+
+#### Expectativa (Figma):
+
+![image](https://github.com/user-attachments/assets/fa1f704b-c81f-49d2-9d04-6d0d73fcd5eb)
+
+#### Resultado inicial (Código):
+
+![image](https://github.com/user-attachments/assets/3321dc5a-5e56-43d7-b16e-a0deb1f9d563)
 
 ---
 
