@@ -10,7 +10,7 @@ namespace app.auth
     public class AuthHandler : IRequestHandler<AuthRequest, AuthResponse>
     {
         private IUserWriteRepository _repository { get; }
-
+        
         private ILogger<AuthHandler> _logger { get; }
 
         private IAuthService _authService { get; }

@@ -39,7 +39,7 @@ function Login(event) {
             return response.json();
         })
         .then((data) => {
-            if (data.isValid) {
+            if (data.token != null) {
                 alert("Login successful!");
                 localStorage.setItem("authToken", data.token); // Armazena o token no localStorage
                 // Redirecionar ou realizar outras ações
