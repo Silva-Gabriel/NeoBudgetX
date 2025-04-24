@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "auth debug",
+            "name": "Auth",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/backend/auth/api/bin/Debug/net8.0/auth.dll",
+            "program": "${workspaceFolder}/backend/auth/api/bin/Debug/net6.0/api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/backend/auth/api",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
@@ -20,6 +20,5 @@
                 "/Views": "${workspaceFolder}/Views"
             }
         }
-
     ]
 }

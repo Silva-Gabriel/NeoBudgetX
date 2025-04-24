@@ -25,9 +25,6 @@ function Login(event) {
     const user = userField.value;
     const password = passwordField.value;
 
-    console.log("User:", user);
-    console.log("Password:", password);
-
     fetch("http://localhost:5000/v1/auth", {
         method: "POST",
         headers: {
@@ -42,9 +39,10 @@ function Login(event) {
             return response.json();
         })
         .then((data) => {
-            if (data.valid) {
+            if (data.isValid) {
                 alert("Login successful!");
-                // Redirect or perform other actions
+                localStorage.setItem("authToken", data.token); // Armazena o token no localStorage
+                // Redirecionar ou realizar outras ações
             } else {
                 alert("Invalid user or password.");
             }
@@ -52,5 +50,28 @@ function Login(event) {
         .catch((error) => {
             console.error("There was a problem with the fetch operation:", error);
             alert("An error occurred. Please try again later.");
+        });
+}
+
+function fetchProtectedData() {
+    const token = localStorage.getItem("authToken");
+
+    fetch("http://localhost:5000/v1/protected-endpoint", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`, // Envia o token no cabeçalho
+        },
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Unauthorized");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Protected data:", data);
+        })
+        .catch((error) => {
+            console.error("Error fetching protected data:", error);
         });
 }

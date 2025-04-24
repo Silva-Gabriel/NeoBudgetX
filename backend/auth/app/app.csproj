@@ -7,14 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BCrypt.Net" Version="0.1.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="MediatR" Version="12.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\domain\domain.csproj" />
-    <ProjectReference Include="..\crosscutting\crosscutting.csproj" />
+    <ProjectReference Include="..\infra\infra.csproj" />
+    <ProjectReference Include="..\services\services.csproj" />
   </ItemGroup>
 
 </Project>

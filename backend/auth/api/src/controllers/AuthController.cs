@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
 using app.auth;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.src.controllers
@@ -25,6 +25,14 @@ namespace api.src.controllers
             var result = await _mediator.Send(auth);
 
             return await Task.FromResult(Ok(result));
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> Get()
+        {
+            _logger.LogInformation("Auth API is working!");
+            return await Task.FromResult(Ok("Auth API is working!"));
         }
     }
 }

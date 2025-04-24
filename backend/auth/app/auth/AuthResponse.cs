@@ -2,6 +2,6 @@ namespace app.auth
 {
     public class AuthResponse
     {
-        public bool IsValid { get; set; }
+        public string Token { get; set; } = string.Empty;
     }
 }

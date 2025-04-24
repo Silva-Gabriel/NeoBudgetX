@@ -1,6 +1,6 @@
 {
     "data": {
-        "isValid": true
+        "token": "string"
     },
     "response": {
         "error": false,
