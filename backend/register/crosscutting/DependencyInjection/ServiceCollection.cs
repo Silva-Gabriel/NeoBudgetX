@@ -9,8 +9,6 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using services;
-
 namespace crosscutting.DependencyInjection
 {
     public static class ServiceCollection
@@ -30,9 +28,19 @@ namespace crosscutting.DependencyInjection
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue<string>("jwtToken:key"))),
                     };
-                    
-                    options.Events = new Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents
+
+                    options.Events = new JwtBearerEvents
                     {
+                        OnTokenValidated = context =>
+                        {
+                            Console.WriteLine("Token validado com sucesso.");
+                            return Task.CompletedTask;
+                        },
+                        OnAuthenticationFailed = context =>
+                        {
+                            Console.WriteLine($"Erro de autenticação: {context.Exception.Message}");
+                            return Task.CompletedTask;
+                        },
                         OnChallenge = context =>
                         {
                             context.HandleResponse();
@@ -44,8 +52,7 @@ namespace crosscutting.DependencyInjection
                 });
                 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
-            services.AddTransient<IAuthService, AuthService>();
-            services.AddTransient<IUserWriteRepository, UserWriteRepository>();
+            services.AddScoped<IUserWriteRepository, UserWriteRepository>();
             services.AddLogging();
 
             var connectionString = configuration.GetSection("dbConfig")["ConnectionString"];

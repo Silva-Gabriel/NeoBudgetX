@@ -1,5 +1,7 @@
 using crosscutting.DependencyInjection;
 
+AppContext.SetSwitch("Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII", true);
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

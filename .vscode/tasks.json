@@ -8,7 +8,8 @@
             "command": "dotnet",
             "type": "shell",
             "args": [
-                "build"
+                "build",
+                "${workspaceFolder}/login.sln"
             ],
             "group": "build",
             "presentation": {
@@ -16,7 +17,7 @@
             },
             "problemMatcher": "$msCompile",
             "options": {
-                "cwd": "${workspaceFolder}/backend/auth"
+                "cwd": "${workspaceFolder}"
             }
         }
     ]

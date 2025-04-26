@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{EB9175C6-CADA-4D70-A2F1-167C3A1138D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "register", "register", "{8438E993-6546-4400-8E3E-2E59E0103122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "backend\register\api\api.csproj", "{23647B24-5CDE-4B34-9D2F-05C78C3EED57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{9D24EE29-BB50-430D-AAED-64F3069D3D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "backend\auth\api\api.csproj", "{17850696-3AAE-4B89-A4E9-FA5869DDE837}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23647B24-5CDE-4B34-9D2F-05C78C3EED57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23647B24-5CDE-4B34-9D2F-05C78C3EED57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23647B24-5CDE-4B34-9D2F-05C78C3EED57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23647B24-5CDE-4B34-9D2F-05C78C3EED57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17850696-3AAE-4B89-A4E9-FA5869DDE837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17850696-3AAE-4B89-A4E9-FA5869DDE837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17850696-3AAE-4B89-A4E9-FA5869DDE837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17850696-3AAE-4B89-A4E9-FA5869DDE837}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8438E993-6546-4400-8E3E-2E59E0103122} = {EB9175C6-CADA-4D70-A2F1-167C3A1138D7}
+		{23647B24-5CDE-4B34-9D2F-05C78C3EED57} = {8438E993-6546-4400-8E3E-2E59E0103122}
+		{9D24EE29-BB50-430D-AAED-64F3069D3D88} = {EB9175C6-CADA-4D70-A2F1-167C3A1138D7}
+		{17850696-3AAE-4B89-A4E9-FA5869DDE837} = {9D24EE29-BB50-430D-AAED-64F3069D3D88}
+	EndGlobalSection
+EndGlobal
