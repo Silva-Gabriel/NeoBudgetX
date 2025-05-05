@@ -26,13 +26,5 @@ namespace api.src.controllers
 
             return await Task.FromResult(Ok(result));
         }
-
-        [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> Get()
-        {
-            _logger.LogInformation("Auth API is working!");
-            return await Task.FromResult(Ok("Auth API is working!"));
-        }
     }
 }

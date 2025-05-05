@@ -35,7 +35,7 @@ namespace app.createRegister
             responseAuth.Password = BCrypt.Net.BCrypt.HashPassword(request.Password, salt);
             var result = await _repository.CreateUser(responseAuth, cancellationToken);
 
-            return new RegisterResponse { Id = result};
+            return new RegisterResponse { Id = result };
         }
     }
 }
