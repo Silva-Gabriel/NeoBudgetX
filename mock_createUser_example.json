@@ -1,0 +1,22 @@
+{
+    "data": {
+        "name": "João da Silva",
+        "email": "joao.silva@email.com",
+        "password": "senhaForte123",
+        "role": "usuario",
+        "birthDate": "1990-05-20",
+        "gender": "masculino",
+        "occupation": "Analista de Sistemas",
+        "monthlyIncome": 5500.00,
+        "financialGoal": "Juntar para comprar um imóvel",
+        "experienceLevel": "pleno",
+        "maritalStatus": "solteiro",
+        "dependents": 0,
+        "preferredCategories": ["alimentação", "moradia", "investimentos"]
+    },
+    "response": {
+        "error": false,
+        "message": "Data retrieved successfully",
+        "status": 200
+    }
+}

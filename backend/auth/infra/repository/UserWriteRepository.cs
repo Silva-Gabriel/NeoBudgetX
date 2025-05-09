@@ -24,5 +24,15 @@ namespace infra.repository
 
             return passwordHash ?? string.Empty;
         }
+
+        public Task<int> GetRole(string user)
+        {
+            var query = $@"SELECT ACCESS_GROUP
+                            FROM TB_USERS
+                            WHERE USERNAME = @username";
+
+            var role = _connection.QueryFirstOrDefaultAsync<int>(query, new { username = user });
+            return role;
+        }
     }
 }

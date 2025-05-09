@@ -1,3 +1,4 @@
+using domain.enums;
 using MediatR;
 
 namespace app.createRegister
@@ -7,5 +8,7 @@ namespace app.createRegister
         public string User { get; set; } = string.Empty;
 
         public string Password { get; set; } = string.Empty;
+
+        public Role Role { get; set; } = Role.USER;
     }
 }

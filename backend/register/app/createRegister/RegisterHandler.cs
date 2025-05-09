@@ -26,7 +26,8 @@ namespace app.createRegister
             var responseAuth = new Authentication 
             {
                 User = request.User,
-                Password = request.Password
+                Password = request.Password,
+                Role = request.Role
             };
 
             _logger.LogInformation($"Registering user {request.User}");

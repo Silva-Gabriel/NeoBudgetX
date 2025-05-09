@@ -39,7 +39,8 @@ namespace app.auth
                 Password = request.Password
             };
             
-            var token = _authService.GenerateToken(authentication, _configuration.GetValue<string>("jwtToken:key"), expirationDateTime);
+            var role = await _repository.GetRole(authentication.User);
+            var token = _authService.GenerateToken(authentication, role, _configuration.GetValue<string>("jwtToken:key"), expirationDateTime);
             var passwordHash = await _repository.GetPasswordHash(authentication, cancellationToken);
 
 
@@ -50,7 +51,6 @@ namespace app.auth
             }
             
             var authValidation = BCrypt.Net.BCrypt.Verify(request.Password, passwordHash);
-
 
             if (authValidation)
             {

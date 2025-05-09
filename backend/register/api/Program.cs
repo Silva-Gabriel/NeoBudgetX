@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authorization header usando o esquema Bearer. Exemplo: \"Authorization: Bearer {token}\"",
+        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\nEnter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
@@ -44,6 +44,16 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
+app.Use(async (context, next) =>
+{
+    await next();
+
+    if (context.Response.StatusCode == StatusCodes.Status403Forbidden)
+    {
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsync("{\"error\": \"Acesso negado. Você não tem permissão para acessar este recurso.\"}");
+    }
+});
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

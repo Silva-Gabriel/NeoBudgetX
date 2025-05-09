@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using domain.enums;
 using domain.models;
 using Microsoft.IdentityModel.Tokens;
 
@@ -7,23 +8,24 @@ namespace services
 {
     public class AuthService : IAuthService
     {
-        public string GenerateToken(Authentication authRequest, string secretKey, DateTime expiration)
+        public string GenerateToken(Authentication authRequest, int role, string secretKey, DateTime expiration)
         {
             var handler = new JwtSecurityTokenHandler();
-            var tokenDescriptor = GetTokenDescriptor(GetClaimsIdentity(authRequest), secretKey, expiration);
+            var tokenDescriptor = GetTokenDescriptor(GetClaimsIdentity(authRequest, role), secretKey, expiration);
             var token = handler.CreateToken(tokenDescriptor);
             var tokenString = handler.WriteToken(token);
 
             return tokenString;
         }
-        private static ClaimsIdentity GetClaimsIdentity(Authentication authRequest)
+        private static ClaimsIdentity GetClaimsIdentity(Authentication authRequest, int role)
         {
             var CI = new ClaimsIdentity();
             CI.AddClaim(new Claim(ClaimTypes.Name, authRequest.User));
-            CI.AddClaim(new Claim(ClaimTypes.Role, "Role"));
+            CI.AddClaim(new Claim(ClaimTypes.Role, Enum.GetName(typeof(Role), role) ?? Role.GUEST.ToString()));
 
             return CI;
         }
+
         private static SecurityTokenDescriptor GetTokenDescriptor(ClaimsIdentity claimsIdentity, string secretKey, DateTime expiration)
         {
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));

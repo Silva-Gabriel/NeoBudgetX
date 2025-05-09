@@ -1,3 +1,5 @@
+using System.Security.Claims;
+
 namespace domain.models
 {
     public class Authentication

@@ -1,4 +1,5 @@
 using app.createRegister;
+using domain.enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace api.src.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = nameof(Role.ADMIN))]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             var result = await _mediator.Send(request);
